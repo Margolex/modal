@@ -1,0 +1,47 @@
+* {
+
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.modal {
+position: fixed;
+inset: 0;
+display: flex;
+background-color: rgba(0,0,0,0.5);
+/* cursor: pointer; */
+padding: 20px;
+padding: 10px;
+display: none;
+}
+
+.modal_text {
+font-size: 26px;
+line-height: 5px;
+}
+
+img {
+       width: 450px;
+    }
+
+
+.modal_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 450px;
+    background-color: black;
+    border-radius: 30px;
+    overflow: hidden;
+    align-items: center;
+    /* cursor: default; */
+    color: white;
+    
+}
+
+.modal-open {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
