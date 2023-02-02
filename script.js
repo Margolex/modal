@@ -1,38 +1,41 @@
 const button = document.querySelector("button");
 const modalArea = document.querySelector(".modal");
 const box = document.querySelector('.modal_box')
-const body = document.createElement("body");
+const body = document.querySelector("body");
 
-
-modalArea.style.cssText = `
-display: flex;
-visibility: hidden;
-opacity:0;
-`;
+modalArea.classList.add('modal_change')
 
 const closeModal = event => {
     const target = event.target;
-      if (target === modalArea && target != box) {
+    if (target === box) {
+       body.classList.add("modal_open") 
+    }
+  
+    if (target === modalArea && target != box) {
         modalArea.style.visibility = "hidden";
         modalArea.style.opacity = 0;
-      }
+        body.classList.remove("modal_open"); 
+    }
+       
+}
+ const closeEsc = () => {
+    body.classList.remove("modal_open");
+     modalArea.style.visibility = "hidden";
+     modalArea.style.opacity = 0;
+};
     
-  const func = () => {
-
-      modalArea.style.visibility = "hidden";
-      modalArea.style.opacity = 0;
- 
-};  
-  
 const openModal = () => {
+    body.classList.add("modal_open");
     modalArea.style.visibility = 'visible';
     modalArea.style.opacity = 1;
-    body.className = "modal-open";
-}
+    }
 
 button.addEventListener("click", openModal);
 modalArea.addEventListener('click', closeModal);
-window.addEventListener("keyup", func);
+window.addEventListener("keyup", closeEsc);
+
+
+
 
 
 
