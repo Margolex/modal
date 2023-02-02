@@ -12,14 +12,18 @@ opacity:0;
 
 const closeModal = event => {
     const target = event.target;
-    if (target === modalArea && target != box) 
-     {
+      if (target === modalArea && target != box) {
+        modalArea.style.visibility = "hidden";
+        modalArea.style.opacity = 0;
+      }
+    
+  const func = () => {
+
       modalArea.style.visibility = "hidden";
       modalArea.style.opacity = 0;
-    }
-    
-}
-    
+ 
+};  
+  
 const openModal = () => {
     modalArea.style.visibility = 'visible';
     modalArea.style.opacity = 1;
@@ -28,10 +32,7 @@ const openModal = () => {
 
 button.addEventListener("click", openModal);
 modalArea.addEventListener('click', closeModal);
-
-
-
-
+window.addEventListener("keyup", func);
 
 
 
