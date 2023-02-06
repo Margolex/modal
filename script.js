@@ -7,10 +7,7 @@ modalArea.classList.add('modal_change')
 
 const closeModal = event => {
     const target = event.target;
-    if (target === box) {
-       body.classList.add("modal_open") 
-    }
-  
+
     if (target === modalArea && target != box) {
         modalArea.style.visibility = "hidden";
         modalArea.style.opacity = 0;
